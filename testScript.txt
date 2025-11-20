@@ -1,0 +1,93 @@
+-- testScript.txt
+--let t00 = [] -- not a knot
+--let t01 = [('a','o'),('a','u')] -- not a knot
+--let t02 = [('a','u'),('a','o')] -- not a knot
+--show t00
+--unKnot t00
+--show t01
+--unKnot t01
+--show t02
+--unKnot t02
+
+
+--let t04 = [('b', 'u'), ('b' ,'o'), ('e', 'u'), ('f', 'o'), ('g', 'o'), ('h' ,'u'), ('f', 'u'), ('g', 'u'), ('h', 'o'), ('e', 'o')]
+--show t04
+--unKnot2Looper t04 []
+
+--let t05 = [('a','o'),('b','o'),('c','o'),('c','u'), ('d','o'),('d','u'), ('b','u'),('a','u')]
+--unKnot2Looper t05 []
+--unKnot2Helper (head(t05), head (tail(t05))) (tail(tail(t05))) []
+
+
+--let todolist = [('b', 'u'), ('b' ,'o'), ('e', 'u'), ('f', 'o'), ('g', 'o'), ('h' ,'u'), ('f', 'u'), ('g', 'u'), ('h', 'o'), ('e', 'o')]
+--listNumElem (unKnot2Helper (head(todolist), head (tail(todolist))) (tail(tail(todolist))) [])
+
+let t10 = [('a', 'o'), ('b', 'u'), ('c', 'u'), ('d' ,'o'), ('d' ,'u'), ('a', 'u'), ('b', 'o'), ('e', 'u'), ('f', 'o'), ('g', 'o'), ('h', 'u'), ('f', 'u'), ('g', 'u'), ('h', 'o'), ('e', 'o'), ('c', 'o')]
+unKnot t10
+
+
+
+--let t02 = [('a','o'),('b','o'),('c','u'),('a','u'),('b','u'),('c','o')]
+--print("   test case t02 - tripcode: " ) -- "Unkot"
+--print(t02)
+--print("   result:" ++ unKnot t02) -- "Unkot"
+ 
+--let t03 = [('a','u'),('b','u'),('a','o'),('b','o')]
+--print("   test case t03 - tripcode: " )
+--print(t03)
+--print("   result:" ++ unKnot t03) -- "Unkot"
+ 
+--let t04 = [('a','o'),('b','u'),('a','u'),('b','o')]
+--print("   test case t04 - tripcode: " )
+--print(t04)
+--print("   result:" ++ unKnot t04) -- "Unkot"
+
+--BREAK
+
+
+--let t06 = [('a','o'),('q','u'), ('a','u')]
+--print("   test case t06 - tripcode: " )
+--print(t06)
+--print("   result:" ++ unKnot t06) -- [('q','u')]
+
+--tripCode = [('a','o'),('q','u'), ('a','u')]
+--listNumElem ( unKnot1Helper (tail (tripCode) ++ [head (tripCode)]) [])
+--listNumElem (unKnot1Helper (tripCode) [])
+--unKnotManager tripCode
+--unKnot tripCode
+--(listNumElem (unKnot2Looper (tripCode) []))
+--(listNumElem (unKnot1HelperInclusive (tripCode)))
+
+ 
+--let t07 = [('a','o'),('a','u'), ('q','u')]
+--print("   test case t07 - tripcode: " )
+--print(t07)
+--print("   result:" ++ unKnot t07) -- [('q','u')]
+ 
+--let t08 = [('a','o'),('b','o'), ('a','u'), ('b','u'),('q','u')]
+--print("   test case t08 - tripcode: " )
+--print(t08)
+--print("   result:" ++ unKnot t08) -- [('q','u')]
+ 
+--let t09 = [('a','u'),('b','o'), ('a','o'), ('b','u'),('q','u')]
+--print("   test case t09 - tripcode: " )
+--print(t09)
+--unKnot2Looper t09 [] -- [('a','o'),('b','o'), ('a','u'), ('b','u') ('q','u')]
+--unKnot2Helper (('a','u'),('b','o')) [('a','o'), ('b','u'),('q','u')] []
+--(snd(fst(pairOf2)) == snd(snd(pairOf2)))
+--print("   result:" ++ unKnot t09) -- [('a','o'),('b','o'), ('a','u'), ('b','u') ('q','u')]
+
+--let t10 = [('a','u'),('b','o'), ('a','o'), ('b','u'),('q','u'),('c','o'),('c','u')]
+--print("   test case t10 - tripcode: " )
+--print(t10)
+--print("   result:" ++ unKnot t10) -- [('a','o'),('b','o'), ('a','u'), ('b','u') ('q','u')]
+ 
+--let t11 = [('a','u'),('b','o'), ('a','o'), ('q','u'),('b','u'),('c','o'),('c','u')]
+--print("   test case t11 - tripcode: " )
+--print(t11)
+--print("   result:" ++ unKnot t11) -- [('q','u')]
+ 
+--let t12 = [('a','o'),('b','u'),('c','u'),('d','o'),('d','u'),('q','u'),('a','u'),('b','o'),('e','u'),('f','o'),('g','o'),('h','u'),('f','u'),('g','u'),('h','o'),('e','o'),('c','o')]
+--print("   test case t12 - tripcode: " )
+--print(t12)
+--print("   result:" ++ unKnot t12) -- [('q','u')]
