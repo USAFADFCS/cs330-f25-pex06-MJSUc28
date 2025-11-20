@@ -6,6 +6,9 @@
 {- DOCUMENTATION: I used C2C Smith, Gavin's testing code that was published in the teams chat to test my implentation. 
 I did not recieve any other help or use any other resources.
 -}
+
+--main unKnot function
+--was changed from guards to pattern matching, since I understand pattern matching better
 unKnot :: [(Char, Char)] -> String
 unKnot [] = "unknot"
 unKnot tripCode = if (listNumElem (unKnot2HelperInclusive (tripCode)) < listNumElem tripCode) ||
